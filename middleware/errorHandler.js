@@ -10,6 +10,9 @@ const errorHandler = (err, req, res, next) => {
         case constants.UNAUTHORIZED:
             res.json({title: "UNAUTHORIZED", message: err.message, trace: err.stackTrace});
             break;
+        case constants.NOT_FOUND:
+            res.json({title: "NOT_FOUND", message: err.message, trace: err.stackTrace});
+            break;
         case constants.SERVER_ERROR:
             res.json({title: "SERVER_ERROR", message: err.message, trace: err.stackTrace});
             break;
