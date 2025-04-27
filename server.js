@@ -4,9 +4,7 @@ const dotenv = require("dotenv").config()
 
 const PORT = process.env.PORT || 5000
 
-app.get("/", (req, res) => {
-    res.status(200).json({message: "Get all my contacts"})
-})
+app.use("/api/contacts/", require("./routes/conactRoutes"));
 
 app.listen(PORT, () => {
     console.log(`App is listening on port ${PORT}`)
